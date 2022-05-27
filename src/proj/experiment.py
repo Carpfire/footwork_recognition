@@ -1,6 +1,6 @@
 from cv2 import repeat
 from sklearn.metrics import ConfusionMatrixDisplay, classification_report, confusion_matrix
-from vpd_fencing_depr.models.module import FCNet
+from vpd_fencing.models.module import FCNet
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 from matplotlib import rc
