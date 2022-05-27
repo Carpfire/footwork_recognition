@@ -29,7 +29,7 @@ cfg.merge_from_file(
 )
 cfg.MODEL.ROI_HEADS.NUM_CLASSES = 3
 
-cfg.MODEL.WEIGHTS = ".\\vpd\\output\\referee_crowd_fencer.pth"
+cfg.MODEL.WEIGHTS = ".\\vpd_fencing\\output\\referee_crowd_fencer.pth"
 cfg.MODEL.ROI_HEADS.SCORE_THRESH_TEST = 0.8
 predictor = DefaultPredictor(cfg)
 

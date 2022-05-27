@@ -18,6 +18,7 @@ __pycache__/
 /src/vpd_fencing/diving48
 /src/vpd_fencing/finegym
 /src/vpd_fencing/output
+/src/vpd_fencing/detectron2
 /src/vpd_fencing/pose_embeddings
 /src/vpd_fencing/vpd_dataset
 
