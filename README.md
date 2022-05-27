@@ -1,14 +1,20 @@
 ﻿# Footwork Recognition
-Repository for development of action recognition model for fencing video data. 
+Repository for development of footwork action recognition model for fencing video data. 
 
-Following the work done in [Video Pose Distillation](https://github.com/jhong93/vpd). 
+Initially videos are downloaded from youtube and cut up into clips that contain scored touches using code found in [data_aquisition](https://github.com/Carpfire/footwork_recognition/tree/main/src/data_aquisition)
 
-Fencer detection, tracking, and pose estimation script for extracting crops and pose features prior to use in the VPD network, found in [create_boxes_file.py](https://github.com/Carpfire/fencing_cv/blob/main/create_boxes_file.py)
+We then train a detection model to detect fencers, referees and the crows using detectron 2. An out of the box pose estimation model is run on the detected fencers and the pose data is saved. 
 
+![Fencer Detection](https://github.com/Carpfire/footwork_recognition/blob/main/Bardenet_Cannone.gif Example Fencer & Referee Detection)
 
-![Fencer Detection](https://github.com/Carpfire/footwork_recognition/blob/main/Bardenet_Cannone.gif)
+![Initial Pose Estimation](https://github.com/Carpfire/footwork_recognition/blob/main/bardenet_pose.gif Initial Pose Estimation)
 
-Current Action Recognition code is in proj file. Contains dataloaders.py, models.py and experiment.py. Demo notebook of training and evaluation found at [baseline.ipynb](https://github.com/Carpfire/footwork_recognition/blob/main/src/baseline.ipynb)
+Poses are noticably noisy due to the lack of domain specific videos, for fencing in this case, in the training corpus of the original model.
+These poses are refined by training a student teacher network using high confidence poses as a supervision signal, as done in [Video Pose Distillation](https://github.com/jhong93/vpd). 
+
+![VPD Pose Esitmation](https://github.com/Carpfire/footwork_recognition/blob/main/bardenet_pose_vpd.gif VPD Pose Estimation)
+
+These refined poses are then used as features in a GRU Neural Network and trained to predict on footwork classes in [baseline.ipynb](https://github.com/Carpfire/footwork_recognition/blob/main/src/baseline.ipynb). 
 
 [Example annotations and embeddings ](https://drive.google.com/drive/folders/1qpjcw3qh63K0SM9M9iTy7TSdffHYdNkd?usp=sharing)
 
