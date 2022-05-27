@@ -61,6 +61,7 @@ def view_poses(pose_file, decoder_path = None):
         data_gen = vpd_data_gen
 
     ani = FuncAnimation(fig, draw_fencer, data_gen)
+    ani.save('Bardenet_Cannone.mp4')
     plt.show()
 
 if __name__ == '__main__':
