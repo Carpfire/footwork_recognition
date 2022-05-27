@@ -13,7 +13,7 @@ __pycache__/
 /models
 /results
 /wandb
-*.mp4
+
 /src/baseline-Copy1.ipynb
 /src/vpd_fencing/data
 /src/vpd_fencing/diving48
