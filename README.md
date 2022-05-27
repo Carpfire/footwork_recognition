@@ -6,7 +6,7 @@ Following the work done in [Video Pose Distillation](https://github.com/jhong93/
 Fencer detection, tracking, and pose estimation script for extracting crops and pose features prior to use in the VPD network, found in [create_boxes_file.py](https://github.com/Carpfire/fencing_cv/blob/main/create_boxes_file.py)
 
 
-
+![Fencer Detection](https://github.com/Carpfire/footwork_recognition/blob/main/Bardenet_Cannone.gif)
 
 Current Action Recognition code is in proj file. Contains dataloaders.py, models.py and experiment.py. Demo notebook of training and evaluation found at [baseline.ipynb](https://github.com/Carpfire/footwork_recognition/blob/main/src/baseline.ipynb)
 
